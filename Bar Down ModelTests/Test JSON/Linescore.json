@@ -1,0 +1,110 @@
+{
+  "currentPeriod": 3,
+  "currentPeriodOrdinal": "3rd",
+  "currentPeriodTimeRemaining": "Final",
+  "periods": [
+    {
+      "periodType": "REGULAR",
+      "startTime": "2019-12-28T00:08:46Z",
+      "endTime": "2019-12-28T00:42:02Z",
+      "num": 1,
+      "ordinalNum": "1st",
+      "home": {
+        "goals": 0,
+        "shotsOnGoal": 11,
+        "rinkSide": "left"
+      },
+      "away": {
+        "goals": 1,
+        "shotsOnGoal": 8,
+        "rinkSide": "right"
+      }
+    },
+    {
+      "periodType": "REGULAR",
+      "startTime": "2019-12-28T01:00:17Z",
+      "endTime": "2019-12-28T01:36:58Z",
+      "num": 2,
+      "ordinalNum": "2nd",
+      "home": {
+        "goals": 0,
+        "shotsOnGoal": 5,
+        "rinkSide": "right"
+      },
+      "away": {
+        "goals": 1,
+        "shotsOnGoal": 12,
+        "rinkSide": "left"
+      }
+    },
+    {
+      "periodType": "REGULAR",
+      "startTime": "2019-12-28T01:55:10Z",
+      "endTime": "2019-12-28T02:31:23Z",
+      "num": 3,
+      "ordinalNum": "3rd",
+      "home": {
+        "goals": 0,
+        "shotsOnGoal": 10,
+        "rinkSide": "left"
+      },
+      "away": {
+        "goals": 1,
+        "shotsOnGoal": 5,
+        "rinkSide": "right"
+      }
+    }
+  ],
+  "shootoutInfo": {
+    "away": {
+      "scores": 0,
+      "attempts": 0
+    },
+    "home": {
+      "scores": 0,
+      "attempts": 0
+    }
+  },
+  "teams": {
+    "home": {
+      "team": {
+        "id": 7,
+        "name": "Buffalo Sabres",
+        "link": "/api/v1/teams/7",
+        "abbreviation": "BUF",
+        "triCode": "BUF"
+      },
+      "goals": 0,
+      "shotsOnGoal": 26,
+      "goaliePulled": false,
+      "numSkaters": 5,
+      "powerPlay": false
+    },
+    "away": {
+      "team": {
+        "id": 6,
+        "name": "Boston Bruins",
+        "link": "/api/v1/teams/6",
+        "abbreviation": "BOS",
+        "triCode": "BOS"
+      },
+      "goals": 3,
+      "shotsOnGoal": 25,
+      "goaliePulled": false,
+      "numSkaters": 5,
+      "powerPlay": false
+    }
+  },
+  "powerPlayStrength": "Even",
+  "hasShootout": false,
+  "intermissionInfo": {
+    "intermissionTimeRemaining": 0,
+    "intermissionTimeElapsed": 0,
+    "inIntermission": false
+  },
+  "powerPlayInfo": {
+    "situationTimeRemaining": 0,
+    "situationTimeElapsed": 114,
+    "inSituation": false
+  }
+}

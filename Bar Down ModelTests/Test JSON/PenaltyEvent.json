@@ -1,0 +1,53 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8477986,
+        "fullName": "Brandon Montour",
+        "link": "/api/v1/people/8477986"
+      },
+      "playerType": "PenaltyOn"
+    },
+    {
+      "player": {
+        "id": 8473419,
+        "fullName": "Brad Marchand",
+        "link": "/api/v1/people/8473419"
+      },
+      "playerType": "DrewBy"
+    }
+  ],
+  "result": {
+    "event": "Penalty",
+    "eventCode": "BUF324",
+    "eventTypeId": "PENALTY",
+    "description": "Brandon Montour Holding against Brad Marchand",
+    "secondaryType": "Holding",
+    "penaltySeverity": "Minor",
+    "penaltyMinutes": 2
+  },
+  "about": {
+    "eventIdx": 148,
+    "eventId": 324,
+    "period": 2,
+    "periodType": "REGULAR",
+    "ordinalNum": "2nd",
+    "periodTime": "14:41",
+    "periodTimeRemaining": "05:19",
+    "dateTime": "2019-12-28T01:27:05Z",
+    "goals": {
+      "away": 1,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": -43.0,
+    "y": -41.0
+  },
+  "team": {
+    "id": 7,
+    "name": "Buffalo Sabres",
+    "link": "/api/v1/teams/7",
+    "triCode": "BUF"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "children": {
+        "1": {
+            "foo": "foo1",
+            "bar": "bar1"
+        },
+        "2": {
+            "foo": "foo2",
+            "bar": "bar2"
+        }
+    }
+}

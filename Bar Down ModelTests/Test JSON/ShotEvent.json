@@ -1,0 +1,51 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8478403,
+        "fullName": "Jack Eichel",
+        "link": "/api/v1/people/8478403"
+      },
+      "playerType": "Shooter"
+    },
+    {
+      "player": {
+        "id": 8470860,
+        "fullName": "Jaroslav Halak",
+        "link": "/api/v1/people/8470860"
+      },
+      "playerType": "Goalie"
+    }
+  ],
+  "result": {
+    "event": "Shot",
+    "eventCode": "BUF153",
+    "eventTypeId": "SHOT",
+    "description": "Jack Eichel Tip-In saved by Jaroslav Halak",
+    "secondaryType": "Tip-In"
+  },
+  "about": {
+    "eventIdx": 4,
+    "eventId": 153,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "00:11",
+    "periodTimeRemaining": "19:49",
+    "dateTime": "2019-12-28T00:09:00Z",
+    "goals": {
+      "away": 0,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": 69.0,
+    "y": -5.0
+  },
+  "team": {
+    "id": 7,
+    "name": "Buffalo Sabres",
+    "link": "/api/v1/teams/7",
+    "triCode": "BUF"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8478403,
+        "fullName": "Jack Eichel",
+        "link": "/api/v1/people/8478403"
+      },
+      "playerType": "Winner"
+    },
+    {
+      "player": {
+        "id": 8470638,
+        "fullName": "Patrice Bergeron",
+        "link": "/api/v1/people/8470638"
+      },
+      "playerType": "Loser"
+    }
+  ],
+  "result": {
+    "event": "Faceoff",
+    "eventCode": "BUF152",
+    "eventTypeId": "FACEOFF",
+    "description": "Jack Eichel faceoff won against Patrice Bergeron"
+  },
+  "about": {
+    "eventIdx": 3,
+    "eventId": 152,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "00:00",
+    "periodTimeRemaining": "20:00",
+    "dateTime": "2019-12-28T00:08:46Z",
+    "goals": {
+      "away": 0,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "team": {
+    "id": 7,
+    "name": "Buffalo Sabres",
+    "link": "/api/v1/teams/7",
+    "triCode": "BUF"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8475807,
+        "fullName": "Joakim Nordstrom",
+        "link": "/api/v1/people/8475807"
+      },
+      "playerType": "Blocker"
+    },
+    {
+      "player": {
+        "id": 8479335,
+        "fullName": "Rasmus Asplund",
+        "link": "/api/v1/people/8479335"
+      },
+      "playerType": "Shooter"
+    }
+  ],
+  "result": {
+    "event": "Blocked Shot",
+    "eventCode": "BUF159",
+    "eventTypeId": "BLOCKED_SHOT",
+    "description": "Rasmus Asplund shot blocked shot by Joakim Nordstrom"
+  },
+  "about": {
+    "eventIdx": 13,
+    "eventId": 159,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "02:37",
+    "periodTimeRemaining": "17:23",
+    "dateTime": "2019-12-28T00:12:12Z",
+    "goals": {
+      "away": 0,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": 76.0,
+    "y": 1.0
+  },
+  "team": {
+    "id": 6,
+    "name": "Boston Bruins",
+    "link": "/api/v1/teams/6",
+    "triCode": "BOS"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8470638,
+        "fullName": "Patrice Bergeron",
+        "link": "/api/v1/people/8470638"
+      },
+      "playerType": "Scorer",
+      "seasonTotal": 16
+    },
+    {
+      "player": {
+        "id": 8477956,
+        "fullName": "David Pastrnak",
+        "link": "/api/v1/people/8477956"
+      },
+      "playerType": "Assist",
+      "seasonTotal": 27
+    },
+    {
+      "player": {
+        "id": 8473419,
+        "fullName": "Brad Marchand",
+        "link": "/api/v1/people/8473419"
+      },
+      "playerType": "Assist",
+      "seasonTotal": 36
+    },
+    {
+      "player": {
+        "id": 8476999,
+        "fullName": "Linus Ullmark",
+        "link": "/api/v1/people/8476999"
+      },
+      "playerType": "Goalie"
+    }
+  ],
+  "result": {
+    "event": "Goal",
+    "eventCode": "BUF193",
+    "eventTypeId": "GOAL",
+    "description": "Patrice Bergeron (16) Slap Shot, assists: David Pastrnak (27), Brad Marchand (36)",
+    "secondaryType": "Slap Shot",
+    "strength": {
+      "code": "PPG",
+      "name": "Power Play"
+    },
+    "gameWinningGoal": true,
+    "emptyNet": false
+  },
+  "about": {
+    "eventIdx": 75,
+    "eventId": 193,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "19:38",
+    "periodTimeRemaining": "00:22",
+    "dateTime": "2019-12-28T00:40:54Z",
+    "goals": {
+      "away": 1,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": -65.0,
+    "y": -4.0
+  },
+  "team": {
+    "id": 6,
+    "name": "Boston Bruins",
+    "link": "/api/v1/teams/6",
+    "triCode": "BOS"
+  }
+}

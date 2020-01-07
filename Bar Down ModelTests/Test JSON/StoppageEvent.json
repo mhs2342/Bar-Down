@@ -1,0 +1,23 @@
+{
+  "result": {
+    "event": "Stoppage",
+    "eventCode": "BUF147",
+    "eventTypeId": "STOP",
+    "description": "Goalie Stopped"
+  },
+  "about": {
+    "eventIdx": 86,
+    "eventId": 147,
+    "period": 2,
+    "periodType": "REGULAR",
+    "ordinalNum": "2nd",
+    "periodTime": "00:29",
+    "periodTimeRemaining": "19:31",
+    "dateTime": "2019-12-28T01:01:05Z",
+    "goals": {
+      "away": 1,
+      "home": 0
+    }
+  },
+  "coordinates": {}
+}

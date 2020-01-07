@@ -1,0 +1,42 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8477508,
+        "fullName": "Curtis Lazar",
+        "link": "/api/v1/people/8477508"
+      },
+      "playerType": "PlayerID"
+    }
+  ],
+  "result": {
+    "event": "Giveaway",
+    "eventCode": "BUF305",
+    "eventTypeId": "GIVEAWAY",
+    "description": "Giveaway by Curtis Lazar"
+  },
+  "about": {
+    "eventIdx": 106,
+    "eventId": 305,
+    "period": 2,
+    "periodType": "REGULAR",
+    "ordinalNum": "2nd",
+    "periodTime": "04:42",
+    "periodTimeRemaining": "15:18",
+    "dateTime": "2019-12-28T01:07:00Z",
+    "goals": {
+      "away": 1,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": -92.0,
+    "y": 27.0
+  },
+  "team": {
+    "id": 7,
+    "name": "Buffalo Sabres",
+    "link": "/api/v1/teams/7",
+    "triCode": "BUF"
+  }
+}

@@ -4,10 +4,53 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bar Down Model.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>Bar Down War Room.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>Bar Down.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C919B82F23B705AD00249A87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C93865FC23B3C36C0071B1DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C938660E23B3C3710071B1DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C938661923B3C3710071B1DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C938662F23B6748D0071B1DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C938664B23B6F2E70071B1DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

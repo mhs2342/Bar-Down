@@ -1,0 +1,42 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8478403,
+        "fullName": "Jack Eichel",
+        "link": "/api/v1/people/8478403"
+      },
+      "playerType": "Shooter"
+    }
+  ],
+  "result": {
+    "event": "Missed Shot",
+    "eventCode": "BUF197",
+    "eventTypeId": "MISSED_SHOT",
+    "description": "Jack Eichel Over Net"
+  },
+  "about": {
+    "eventIdx": 83,
+    "eventId": 197,
+    "period": 2,
+    "periodType": "REGULAR",
+    "ordinalNum": "2nd",
+    "periodTime": "00:17",
+    "periodTimeRemaining": "19:43",
+    "dateTime": "2019-12-28T01:00:45Z",
+    "goals": {
+      "away": 1,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": -45.0,
+    "y": 6.0
+  },
+  "team": {
+    "id": 7,
+    "name": "Buffalo Sabres",
+    "link": "/api/v1/teams/7",
+    "triCode": "BUF"
+  }
+}

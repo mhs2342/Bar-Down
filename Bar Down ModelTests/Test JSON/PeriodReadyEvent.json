@@ -1,0 +1,23 @@
+{
+  "result": {
+    "event": "Period Ready",
+    "eventCode": "BUF102",
+    "eventTypeId": "PERIOD_READY",
+    "description": "Period Ready"
+  },
+  "about": {
+    "eventIdx": 1,
+    "eventId": 102,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "00:00",
+    "periodTimeRemaining": "20:00",
+    "dateTime": "2019-12-28T00:04:22Z",
+    "goals": {
+      "away": 0,
+      "home": 0
+    }
+  },
+  "coordinates": {}
+}

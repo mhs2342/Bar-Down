@@ -1,0 +1,42 @@
+{
+  "players": [
+    {
+      "player": {
+        "id": 8473419,
+        "fullName": "Brad Marchand",
+        "link": "/api/v1/people/8473419"
+      },
+      "playerType": "PlayerID"
+    }
+  ],
+  "result": {
+    "event": "Takeaway",
+    "eventCode": "BUF109",
+    "eventTypeId": "TAKEAWAY",
+    "description": "Takeaway by Brad Marchand"
+  },
+  "about": {
+    "eventIdx": 15,
+    "eventId": 109,
+    "period": 1,
+    "periodType": "REGULAR",
+    "ordinalNum": "1st",
+    "periodTime": "03:03",
+    "periodTimeRemaining": "16:57",
+    "dateTime": "2019-12-28T00:12:41Z",
+    "goals": {
+      "away": 0,
+      "home": 0
+    }
+  },
+  "coordinates": {
+    "x": 9.0,
+    "y": -32.0
+  },
+  "team": {
+    "id": 6,
+    "name": "Boston Bruins",
+    "link": "/api/v1/teams/6",
+    "triCode": "BOS"
+  }
+}
