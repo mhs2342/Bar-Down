@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: - BDMLiveGameTeam
-class BDMLiveGameTeam: BDMTeam {
-    let tricode: String
+public class BDMLiveGameTeam: BDMTeam {
+    public let tricode: String
 
     private enum SubCodingKeys: String, CodingKey {
         case tricode = "triCode"
@@ -36,12 +36,12 @@ class BDMLiveGameTeam: BDMTeam {
 
     }
 
-    override func encode(with coder: NSCoder) {
+    public override func encode(with coder: NSCoder) {
         coder.encode(self.tricode, forKey: "triCode")
         super.encode(with: coder)
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         let franchiseID = coder.decodeInteger(forKey: "franchiseID")
         let active = coder.decodeBool(forKey: "active")
@@ -79,7 +79,7 @@ class BDMLiveGameTeam: BDMTeam {
                   active: active)
     }
 
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SubCodingKeys.self)
         self.tricode = try container.decode(String.self, forKey: .tricode)
         try super.init(from: decoder)

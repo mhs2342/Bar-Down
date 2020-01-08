@@ -11,6 +11,4 @@ import Foundation
 
 @objc public protocol BDWarRoomProtocol {
     func getTodaysSchedule(with reply: (BDMScheduledGames) -> Void)
-
-
 }

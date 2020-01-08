@@ -9,23 +9,22 @@
 import Foundation
 
 // MARK: - BDMLiveGamePlayer
-class BDMLiveGamePlayer: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
+public class BDMLiveGamePlayer: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let id: Int
+    public let fullName, link, firstName, lastName: String
+    public let primaryNumber, birthDate: String
+    public let currentAge: Int
+    public let birthCity, birthCountry, nationality: String
+    public let birthStateProvince: String?
+    public let height: String
+    public let weight: Int
+    public let active, alternateCaptain, captain, rookie: Bool
+    public let shootsCatches, rosterStatus: String
+    public let currentTeam: BDMPlayerCurrentTeam
+    public let primaryPosition: BDMPlayerPrimaryPosition
 
-    let id: Int
-    let fullName, link, firstName, lastName: String
-    let primaryNumber, birthDate: String
-    let currentAge: Int
-    let birthCity, birthCountry, nationality: String
-    let birthStateProvince: String?
-    let height: String
-    let weight: Int
-    let active, alternateCaptain, captain, rookie: Bool
-    let shootsCatches, rosterStatus: String
-    let currentTeam: BDMPlayerCurrentTeam
-    let primaryPosition: BDMPlayerPrimaryPosition
-
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.id, forKey: "player_id")
         coder.encode(self.fullName, forKey: "fullName")
         coder.encode(self.link, forKey: "link")
@@ -50,7 +49,7 @@ class BDMLiveGamePlayer: NSObject, Codable, NSSecureCoding {
         coder.encode(self.primaryPosition, forKey: "primaryPosition")
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "player_id")
         let currentAge = coder.decodeInteger(forKey: "currentAge")
         let weight = coder.decodeInteger(forKey: "weight")
@@ -125,7 +124,7 @@ class BDMLiveGamePlayer: NSObject, Codable, NSSecureCoding {
         self.primaryPosition = primaryPosition
     }
 
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? BDMLiveGamePlayer {
             if object === self {
                 return true
@@ -143,17 +142,17 @@ class BDMLiveGamePlayer: NSObject, Codable, NSSecureCoding {
 }
 
 // MARK: - CurrentTeam
-class BDMPlayerCurrentTeam: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
+public class BDMPlayerCurrentTeam: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.id, forKey: "id")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.link, forKey: "link")
         coder.encode(self.triCode, forKey: "triCode")
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         guard let link = coder.decodeObject(of: NSString.self, forKey: "link"),
             let name = coder.decodeObject(of: NSString.self, forKey: "name"),
@@ -166,8 +165,8 @@ class BDMPlayerCurrentTeam: NSObject, Codable, NSSecureCoding {
                   triCode: triCode as String)
     }
 
-    let id: Int
-    let name, link, triCode: String
+    public let id: Int
+    public let name, link, triCode: String
 
     init(id: Int, name: String, link: String, triCode: String) {
         self.id = id
@@ -176,7 +175,7 @@ class BDMPlayerCurrentTeam: NSObject, Codable, NSSecureCoding {
         self.triCode = triCode
     }
 
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? BDMPlayerCurrentTeam {
             if object === self {
                 return true
@@ -194,17 +193,17 @@ class BDMPlayerCurrentTeam: NSObject, Codable, NSSecureCoding {
 }
 
 // MARK: - PrimaryPosition
-class BDMPlayerPrimaryPosition: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
+public class BDMPlayerPrimaryPosition: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.code, forKey: "code")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.type, forKey: "type")
         coder.encode(self.abbreviation, forKey: "abbreviation")
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let code = coder.decodeObject(of: NSString.self, forKey: "code"),
             let name = coder.decodeObject(of: NSString.self, forKey: "name"),
             let type = coder.decodeObject(of: NSString.self, forKey: "type"),
@@ -217,7 +216,7 @@ class BDMPlayerPrimaryPosition: NSObject, Codable, NSSecureCoding {
                   abbreviation: abbreviation as String)
     }
 
-    let code, name, type, abbreviation: String
+    public let code, name, type, abbreviation: String
 
     init(code: String, name: String, type: String, abbreviation: String) {
         self.code = code
@@ -226,7 +225,7 @@ class BDMPlayerPrimaryPosition: NSObject, Codable, NSSecureCoding {
         self.abbreviation = abbreviation
     }
 
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? BDMPlayerPrimaryPosition {
             if object === self {
                 return true

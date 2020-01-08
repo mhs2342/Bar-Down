@@ -37,6 +37,15 @@
 		C9BA5ACA23C43A70008A39CB /* ScheduledGames.json in Resources */ = {isa = PBXBuildFile; fileRef = C9BA5AC923C43A70008A39CB /* ScheduledGames.json */; };
 		C9BA5ACC23C43BBC008A39CB /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
 		C9BA5ACD23C43BBC008A39CB /* libBar Down Model.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		C9BA5AD223C4EA64008A39CB /* BDWarRoomNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA5AD123C4EA64008A39CB /* BDWarRoomNetworkManager.swift */; };
+		C9BA5AD423C54A40008A39CB /* BDWarRoomErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */; };
+		C9BA5AD523C64300008A39CB /* BDWarRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938664223B6765E0071B1DD /* BDWarRoom.swift */; };
+		C9BA5AD623C64300008A39CB /* BDWarRoomProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938664423B676890071B1DD /* BDWarRoomProtocol.swift */; };
+		C9BA5AD723C64300008A39CB /* BDWarRoomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938664623B676BE0071B1DD /* BDWarRoomDelegate.swift */; };
+		C9BA5AD823C64300008A39CB /* BDWarRoomNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA5AD123C4EA64008A39CB /* BDWarRoomNetworkManager.swift */; };
+		C9BA5AD923C64300008A39CB /* BDWarRoomErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */; };
+		C9BA5ADA23C64312008A39CB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938664023B676440071B1DD /* main.swift */; };
+		C9BA5ADB23C6433C008A39CB /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
 		C9F4686223B7C79500DA110F /* BDMLiveGameTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */; };
 		C9F4686523B7CB0E00DA110F /* LiveGameTeamBuffalo.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F4686423B7CB0E00DA110F /* LiveGameTeamBuffalo.json */; };
 		C9F4686723B7CD0E00DA110F /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
@@ -168,6 +177,8 @@
 		C9BA5AC523C42AA6008A39CB /* BDMScheduledGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMScheduledGames.swift; sourceTree = "<group>"; };
 		C9BA5AC723C42D69008A39CB /* BDMLiteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiteObject.swift; sourceTree = "<group>"; };
 		C9BA5AC923C43A70008A39CB /* ScheduledGames.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ScheduledGames.json; sourceTree = "<group>"; };
+		C9BA5AD123C4EA64008A39CB /* BDWarRoomNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDWarRoomNetworkManager.swift; sourceTree = "<group>"; };
+		C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDWarRoomErrorHandler.swift; sourceTree = "<group>"; };
 		C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameTeam.swift; sourceTree = "<group>"; };
 		C9F4686423B7CB0E00DA110F /* LiveGameTeamBuffalo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LiveGameTeamBuffalo.json; sourceTree = "<group>"; };
 		C9F4687023B7CF8D00DA110F /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
@@ -213,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA5ADB23C6433C008A39CB /* libBar Down Model.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +329,8 @@
 				C938664223B6765E0071B1DD /* BDWarRoom.swift */,
 				C938664423B676890071B1DD /* BDWarRoomProtocol.swift */,
 				C938664623B676BE0071B1DD /* BDWarRoomDelegate.swift */,
+				C9BA5AD123C4EA64008A39CB /* BDWarRoomNetworkManager.swift */,
+				C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */,
 			);
 			path = "Bar Down War Room";
 			sourceTree = "<group>";
@@ -645,7 +659,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA5AD623C64300008A39CB /* BDWarRoomProtocol.swift in Sources */,
+				C9BA5ADA23C64312008A39CB /* main.swift in Sources */,
+				C9BA5AD923C64300008A39CB /* BDWarRoomErrorHandler.swift in Sources */,
 				C938661423B3C3710071B1DD /* Bar_DownTests.swift in Sources */,
+				C9BA5AD723C64300008A39CB /* BDWarRoomDelegate.swift in Sources */,
+				C9BA5AD823C64300008A39CB /* BDWarRoomNetworkManager.swift in Sources */,
+				C9BA5AD523C64300008A39CB /* BDWarRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,8 +682,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C938664523B676890071B1DD /* BDWarRoomProtocol.swift in Sources */,
+				C9BA5AD423C54A40008A39CB /* BDWarRoomErrorHandler.swift in Sources */,
 				C938664123B676440071B1DD /* main.swift in Sources */,
 				C938664723B676BE0071B1DD /* BDWarRoomDelegate.swift in Sources */,
+				C9BA5AD223C4EA64008A39CB /* BDWarRoomNetworkManager.swift in Sources */,
 				C938664323B6765E0071B1DD /* BDWarRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

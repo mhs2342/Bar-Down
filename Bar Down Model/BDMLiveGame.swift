@@ -8,11 +8,11 @@
 
 import Foundation
 
-class BDMLiveGame: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let link: String
-    let liveData: BDMLiveGameData
-    let gameData: BDMLiveGameGameData
+public class BDMLiveGame: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let link: String
+    public let liveData: BDMLiveGameData
+    public let gameData: BDMLiveGameGameData
 
     init(link: String, liveData: BDMLiveGameData, gameData: BDMLiveGameGameData) {
         self.link = link
@@ -20,7 +20,7 @@ class BDMLiveGame: NSObject, Codable, NSSecureCoding {
         self.gameData = gameData
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let link = coder.decodeObject(of: NSString.self, forKey: "link"),
             let liveData = coder.decodeObject(of: BDMLiveGameData.self, forKey: "liveData"),
             let gameData = coder.decodeObject(of: BDMLiveGameGameData.self, forKey: "gameData") else {
@@ -31,13 +31,13 @@ class BDMLiveGame: NSObject, Codable, NSSecureCoding {
                   gameData: gameData)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.link, forKey: "link")
         coder.encode(self.liveData, forKey: "liveData")
         coder.encode(self.gameData, forKey: "gameData")
     }
 
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let object = object as? BDMLiveGame {
             if object === self {
                 return true
@@ -54,11 +54,11 @@ class BDMLiveGame: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameData: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let plays: BDMLiveGamePlays
-    let linescore: BDMLiveGameLinescore
-    let boxscore: BDMLiveGameBoxScore
+public class BDMLiveGameData: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let plays: BDMLiveGamePlays
+    public let linescore: BDMLiveGameLinescore
+    public let boxscore: BDMLiveGameBoxScore
 
     init(plays: BDMLiveGamePlays, linescore: BDMLiveGameLinescore, boxscore: BDMLiveGameBoxScore) {
         self.plays = plays
@@ -66,7 +66,7 @@ class BDMLiveGameData: NSObject, Codable, NSSecureCoding {
         self.boxscore = boxscore
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let plays = coder.decodeObject(of: BDMLiveGamePlays.self, forKey: "plays"),
             let linescore = coder.decodeObject(of: BDMLiveGameLinescore.self, forKey: "linescore"),
             let boxscore = coder.decodeObject(of: BDMLiveGameBoxScore.self, forKey: "boxscore") else { return nil }
@@ -76,7 +76,7 @@ class BDMLiveGameData: NSObject, Codable, NSSecureCoding {
                   boxscore: boxscore)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.plays, forKey: "plays")
         coder.encode(self.linescore, forKey: "linescore")
         coder.encode(self.boxscore, forKey: "boxscore")

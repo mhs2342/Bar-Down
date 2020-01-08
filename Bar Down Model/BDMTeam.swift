@@ -9,20 +9,19 @@
 import Foundation
 
 // MARK: - BDMTeam
-class BDMTeam: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-
-    let id: Int
-    let name, link: String
-    let venue: BDMVenue
-    let abbreviation, teamName, locationName, firstYearOfPlay: String
-    let division: BDMDivision
-    let conference: BDMConference
-    let franchise: BDMFranchise
-    let shortName: String
-    let officialSiteURL: String
-    let franchiseID: Int
-    let active: Bool
+public class BDMTeam: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let id: Int
+    public let name, link: String
+    public let venue: BDMVenue
+    public let abbreviation, teamName, locationName, firstYearOfPlay: String
+    public let division: BDMDivision
+    public let conference: BDMConference
+    public let franchise: BDMFranchise
+    public let shortName: String
+    public let officialSiteURL: String
+    public let franchiseID: Int
+    public let active: Bool
 
     enum CodingKeys: String, CodingKey {
         case id, name, link, venue, abbreviation, teamName, locationName, firstYearOfPlay, division, conference, franchise, shortName
@@ -31,7 +30,7 @@ class BDMTeam: NSObject, Codable, NSSecureCoding {
         case active
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encodeCInt(Int32(self.id), forKey: "id")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.link, forKey: "link")
@@ -67,7 +66,7 @@ class BDMTeam: NSObject, Codable, NSSecureCoding {
         self.active = active
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         let franchiseID = coder.decodeInteger(forKey: "franchiseID")
         let active = coder.decodeBool(forKey: "active")

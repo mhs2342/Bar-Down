@@ -9,11 +9,10 @@
 import Foundation
 
 // MARK: - Division
-class BDMDivision: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-
-    let id: Int
-    let name, nameShort, link, abbreviation: String
+public class BDMDivision: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let id: Int
+    public let name, nameShort, link, abbreviation: String
 
     init(id: Int, name: String, nameShort: String, link: String, abbreviation: String) {
         self.id = id
@@ -23,7 +22,7 @@ class BDMDivision: NSObject, Codable, NSSecureCoding {
         self.abbreviation = abbreviation
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         guard let name = coder.decodeObject(of: NSString.self, forKey: "name"),
             let nameShort = coder.decodeObject(of: NSString.self, forKey: "nameShort"),
@@ -39,7 +38,7 @@ class BDMDivision: NSObject, Codable, NSSecureCoding {
                   abbreviation: abbreviation as String)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encodeCInt(Int32(self.id), forKey: "id")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.nameShort, forKey: "nameShort")

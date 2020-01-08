@@ -9,7 +9,10 @@
 import Bar_Down_Model
 import Foundation
 
-class BDWarRoom: NSObject, BDWarRoomProtocol {
+class BDWarRoom: NSObject, BDWarRoomProtocol {    
+    override init() {
+        super.init()
+    }
     func getTodaysSchedule(with reply: (BDMScheduledGames) -> Void) {
         
     }

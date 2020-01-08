@@ -8,14 +8,14 @@
 
 import Foundation
 
-class BDMLiveGamePlays: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    var allPlays: [BDMLiveGameEvent]
-    var scoringPlays, penaltyPlays: [Int]
-    var periodPlays: [BDMLiveGamePeriodPlays]
-    var currentPlay: BDMLiveGameEvent
+public class BDMLiveGamePlays: NSObject, Codable, NSSecureCoding {
+   public static var supportsSecureCoding: Bool { return true }
+   public var allPlays: [BDMLiveGameEvent]
+   public var scoringPlays, penaltyPlays: [Int]
+   public var periodPlays: [BDMLiveGamePeriodPlays]
+   public var currentPlay: BDMLiveGameEvent
 
-    enum CodingKeys: String, CodingKey {
+    public enum CodingKeys: String, CodingKey {
         case allPlays
         case scoringPlays
         case penaltyPlays
@@ -32,7 +32,7 @@ class BDMLiveGamePlays: NSObject, Codable, NSSecureCoding {
 
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let allPlays = coder.decodeObject(of: [BDMLiveGameEvent.self], forKey: "allPlays") as? [BDMLiveGameEvent],
             let scoringPlays = coder.decodeObject(of: [NSNumber.self], forKey: "scoringPlays") as? [Int],
             let penaltyPlays = coder.decodeObject(of: [NSNumber.self], forKey: "penaltyPlays") as? [Int],
@@ -47,7 +47,7 @@ class BDMLiveGamePlays: NSObject, Codable, NSSecureCoding {
                   currentPlay: currentPlay)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.allPlays, forKey: "allPlays")
         coder.encode(self.scoringPlays, forKey: "scoringPlays")
         coder.encode(self.penaltyPlays, forKey: "peanltyPlays")
@@ -58,10 +58,10 @@ class BDMLiveGamePlays: NSObject, Codable, NSSecureCoding {
 }
 
 // MARK: - BDMLiveGamePeriodPlays
-class BDMLiveGamePeriodPlays: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let startIndex, endIndex: Int
-    let plays: [Int]
+public class BDMLiveGamePeriodPlays: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let startIndex, endIndex: Int
+    public let plays: [Int]
 
     init(startIndex: Int, endIndex: Int, plays: [Int]) {
         self.startIndex = startIndex
@@ -69,7 +69,7 @@ class BDMLiveGamePeriodPlays: NSObject, Codable, NSSecureCoding {
         self.plays = plays
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let startIndex = coder.decodeInteger(forKey: "startIndex")
         let endIndex = coder.decodeInteger(forKey: "endIndex")
         let plays = coder.decodeObject(of: [NSNumber.self], forKey: "plays")
@@ -78,7 +78,7 @@ class BDMLiveGamePeriodPlays: NSObject, Codable, NSSecureCoding {
                   plays: plays as? [Int] ?? [])
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.startIndex, forKey: "startIndex")
         coder.encode(self.endIndex, forKey: "endIndex")
         coder.encode(self.plays, forKey: "plays")

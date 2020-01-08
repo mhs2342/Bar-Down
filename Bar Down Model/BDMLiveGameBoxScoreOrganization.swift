@@ -8,16 +8,16 @@
 
 import Foundation
 
-class BDMLiveGameBoxScoreOrganization: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let team: BDMLiveGameBoxScoreTeam
-    let teamStats: BDMLiveGameBoxScoreTeamStats
-    let players: [String: BDMLiveGameBoxScorePlayer]
-    let goalies: [Int]
-    let skaters: [Int]
-    let onIce: [Int]
-    let scratches: [Int]
-    let penaltyBox: [Int]
+public class BDMLiveGameBoxScoreOrganization: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let team: BDMLiveGameBoxScoreTeam
+    public let teamStats: BDMLiveGameBoxScoreTeamStats
+    public let players: [String: BDMLiveGameBoxScorePlayer]
+    public let goalies: [Int]
+    public let skaters: [Int]
+    public let onIce: [Int]
+    public let scratches: [Int]
+    public let penaltyBox: [Int]
 
     init(team: BDMLiveGameBoxScoreTeam, teamStats: BDMLiveGameBoxScoreTeamStats, players: [String : BDMLiveGameBoxScorePlayer], goalies: [Int], skaters: [Int], onIce: [Int], scratches: [Int], penaltyBox: [Int]) {
         self.team = team
@@ -30,7 +30,7 @@ class BDMLiveGameBoxScoreOrganization: NSObject, Codable, NSSecureCoding {
         self.penaltyBox = penaltyBox
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let team = coder.decodeObject(of: BDMLiveGameBoxScoreTeam.self, forKey: "team"),
             let teamStats = coder.decodeObject(of: BDMLiveGameBoxScoreTeamStats.self, forKey: "teamStats"),
             let players = coder.decodeObject(of: NSDictionary.self, forKey: "players") as? [String : BDMLiveGameBoxScorePlayer],
@@ -52,7 +52,7 @@ class BDMLiveGameBoxScoreOrganization: NSObject, Codable, NSSecureCoding {
                   penaltyBox: penaltyBox)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.team, forKey: "team")
         coder.encode(self.teamStats, forKey: "teamStats")
         coder.encode(self.players, forKey: "players")
@@ -64,33 +64,33 @@ class BDMLiveGameBoxScoreOrganization: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScoreTeamStats: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let teamSkaterStats: BDMLiveGameBoxScoreTeamSkaterStats?
+public class BDMLiveGameBoxScoreTeamStats: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let teamSkaterStats: BDMLiveGameBoxScoreTeamSkaterStats?
 
     init(teamSkaterStats: BDMLiveGameBoxScoreTeamSkaterStats?) {
         self.teamSkaterStats = teamSkaterStats
     }
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let stats = coder.decodeObject(of: BDMLiveGameBoxScoreTeamSkaterStats.self, forKey: "stats")
         self.init(teamSkaterStats: stats)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.teamSkaterStats, forKey: "stats")
     }
 
 }
 
 
-class BDMLiveGameBoxScoreTeamSkaterStats: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
+public class BDMLiveGameBoxScoreTeamSkaterStats: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
 
-    let goals, pim, shots: Int
-    let powerPlayPercentage: String
-    let powerPlayGoals, powerPlayOpportunities: Double
-    let faceOffWinPercentage: String
-    let blocked, takeaways, giveaways, hits: Int
+    public let goals, pim, shots: Int
+    public let powerPlayPercentage: String
+    public let powerPlayGoals, powerPlayOpportunities: Double
+    public let faceOffWinPercentage: String
+    public let blocked, takeaways, giveaways, hits: Int
 
     init(goals: Int, pim: Int, shots: Int, powerPlayPercentage: String, powerPlayGoals: Double, powerPlayOpportunities: Double, faceOffWinPercentage: String, blocked: Int, takeaways: Int, giveaways: Int, hits: Int) {
         self.goals = goals
@@ -106,7 +106,7 @@ class BDMLiveGameBoxScoreTeamSkaterStats: NSObject, Codable, NSSecureCoding {
         self.hits = hits
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let goals = coder.decodeInteger(forKey: "goals")
         let pim = coder.decodeInteger(forKey: "pim")
         let shots = coder.decodeInteger(forKey: "shots")
@@ -133,7 +133,7 @@ class BDMLiveGameBoxScoreTeamSkaterStats: NSObject, Codable, NSSecureCoding {
                   hits: hits)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.goals, forKey: "goals")
         coder.encode(self.pim, forKey: "pim")
         coder.encode(self.shots, forKey: "shots")
@@ -147,10 +147,10 @@ class BDMLiveGameBoxScoreTeamSkaterStats: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScoreTeam: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let id: Int
-    let name, link, abbreviation, triCode: String
+public class BDMLiveGameBoxScoreTeam: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let id: Int
+    public let name, link, abbreviation, triCode: String
 
     init(id: Int, name: String, link: String, abbreviation: String, triCode: String) {
         self.id = id
@@ -160,7 +160,7 @@ class BDMLiveGameBoxScoreTeam: NSObject, Codable, NSSecureCoding {
         self.triCode = triCode
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         guard let name = coder.decodeObject(of: NSString.self, forKey: "name"),
             let link = coder.decodeObject(of: NSString.self, forKey: "link"),
@@ -174,7 +174,7 @@ class BDMLiveGameBoxScoreTeam: NSObject, Codable, NSSecureCoding {
                   triCode: triCode as String)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.id, forKey: "id")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.link, forKey: "link")
@@ -184,12 +184,12 @@ class BDMLiveGameBoxScoreTeam: NSObject, Codable, NSSecureCoding {
 }
 
 
-class BDMLiveGameBoxScorePlayer: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let jerseyNumber: String
-    let playerInfo: BDMLiveGameBoxScorePlayerInfo
-    let position: BDMLiveGameBoxScorePlayerPosition
-    let stats: BDMLiveGameBoxScorePlayerStats
+public class BDMLiveGameBoxScorePlayer: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let jerseyNumber: String
+    public let playerInfo: BDMLiveGameBoxScorePlayerInfo
+    public let position: BDMLiveGameBoxScorePlayerPosition
+    public let stats: BDMLiveGameBoxScorePlayerStats
 
     enum CodingKeys: String, CodingKey {
         case jerseyNumber
@@ -198,14 +198,14 @@ class BDMLiveGameBoxScorePlayer: NSObject, Codable, NSSecureCoding {
         case stats
     }
 
-    init(jerseyNumber: String, playerInfo: BDMLiveGameBoxScorePlayerInfo, position: BDMLiveGameBoxScorePlayerPosition, stats: BDMLiveGameBoxScorePlayerStats) {
+    public init(jerseyNumber: String, playerInfo: BDMLiveGameBoxScorePlayerInfo, position: BDMLiveGameBoxScorePlayerPosition, stats: BDMLiveGameBoxScorePlayerStats) {
         self.jerseyNumber = jerseyNumber
         self.playerInfo = playerInfo
         self.position = position
         self.stats = stats
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let jerseyNumber = coder.decodeObject(of: NSString.self, forKey: "jerseyNumber"),
             let playerInfo = coder.decodeObject(of: BDMLiveGameBoxScorePlayerInfo.self, forKey: "playerInfo"),
             let position = coder.decodeObject(of: BDMLiveGameBoxScorePlayerPosition.self, forKey: "position"),
@@ -218,7 +218,7 @@ class BDMLiveGameBoxScorePlayer: NSObject, Codable, NSSecureCoding {
                   stats: stats)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.jerseyNumber, forKey: "jerseyNumber")
         coder.encode(self.playerInfo, forKey: "playerInfo")
         coder.encode(self.position, forKey: "position")
@@ -226,10 +226,10 @@ class BDMLiveGameBoxScorePlayer: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScorePlayerInfo: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let id: Int
-    let fullName, link, shootsCatches, rosterStatus: String
+public class BDMLiveGameBoxScorePlayerInfo: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let id: Int
+    public let fullName, link, shootsCatches, rosterStatus: String
 
     init(id: Int, fullName: String, link: String, shootsCatches: String, rosterStatus: String) {
         self.id = id
@@ -239,7 +239,7 @@ class BDMLiveGameBoxScorePlayerInfo: NSObject, Codable, NSSecureCoding {
         self.rosterStatus = rosterStatus
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let id = coder.decodeInteger(forKey: "id")
         guard let fullName = coder.decodeObject(of: NSString.self, forKey: "fullName"),
             let link = coder.decodeObject(of: NSString.self, forKey: "link"),
@@ -253,7 +253,7 @@ class BDMLiveGameBoxScorePlayerInfo: NSObject, Codable, NSSecureCoding {
                   rosterStatus: rosterStatus as String)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.id, forKey: "id")
         coder.encode(self.link, forKey: "link")
         coder.encode(self.shootsCatches, forKey: "shootsCatches")
@@ -261,9 +261,9 @@ class BDMLiveGameBoxScorePlayerInfo: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScorePlayerPosition: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let code, name, type, abbreviation: String
+public class BDMLiveGameBoxScorePlayerPosition: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let code, name, type, abbreviation: String
 
     init(code: String, name: String, type: String, abbreviation: String) {
         self.code = code
@@ -272,7 +272,7 @@ class BDMLiveGameBoxScorePlayerPosition: NSObject, Codable, NSSecureCoding {
         self.abbreviation = abbreviation
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         guard let code = coder.decodeObject(of: NSString.self, forKey: "code"),
             let name = coder.decodeObject(of: NSString.self, forKey: "name"),
             let type = coder.decodeObject(of: NSString.self, forKey: "type"),
@@ -285,7 +285,7 @@ class BDMLiveGameBoxScorePlayerPosition: NSObject, Codable, NSSecureCoding {
                   abbreviation: abbreviation as String)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.code, forKey: "code")
         coder.encode(self.name, forKey: "name")
         coder.encode(self.type, forKey: "type")
@@ -293,10 +293,10 @@ class BDMLiveGameBoxScorePlayerPosition: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScorePlayerStats: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let skaterStats: BDMLiveGameBoxScorePlayerSkaterStats?
-    let goalieStats: BDMLiveGameBoxScorePlayerGoalieStats?
+public class BDMLiveGameBoxScorePlayerStats: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let skaterStats: BDMLiveGameBoxScorePlayerSkaterStats?
+    public let goalieStats: BDMLiveGameBoxScorePlayerGoalieStats?
 
     init(skaterStats: BDMLiveGameBoxScorePlayerSkaterStats? = nil,
                   goalieStats: BDMLiveGameBoxScorePlayerGoalieStats? = nil) {
@@ -304,28 +304,28 @@ class BDMLiveGameBoxScorePlayerStats: NSObject, Codable, NSSecureCoding {
         self.goalieStats = goalieStats
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let skaterStats = coder.decodeObject(of: BDMLiveGameBoxScorePlayerSkaterStats.self, forKey: "skaterStats")
         let goalieStats = coder.decodeObject(of: BDMLiveGameBoxScorePlayerGoalieStats.self, forKey: "goalieStats")
         self.init(skaterStats: skaterStats,
                   goalieStats: goalieStats)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.skaterStats, forKey: "skaterStats")
         coder.encode(self.goalieStats, forKey: "goalieStats")
     }
 }
 
-class BDMLiveGameBoxScorePlayerSkaterStats: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let timeOnIce: String
-    let assists, goals, shots, hits: Int
-    let powerPlayGoals, powerPlayAssists, penaltyMinutes: Int
-    let faceOffPct: Double?
-    let faceOffWins, faceoffTaken, takeaways, giveaways: Int
-    let shortHandedGoals, shortHandedAssists, blocked, plusMinus: Int
-    let evenTimeOnIce, powerPlayTimeOnIce, shortHandedTimeOnIce: String
+public class BDMLiveGameBoxScorePlayerSkaterStats: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let timeOnIce: String
+    public let assists, goals, shots, hits: Int
+    public let powerPlayGoals, powerPlayAssists, penaltyMinutes: Int
+    public let faceOffPct: Double?
+    public let faceOffWins, faceoffTaken, takeaways, giveaways: Int
+    public let shortHandedGoals, shortHandedAssists, blocked, plusMinus: Int
+    public let evenTimeOnIce, powerPlayTimeOnIce, shortHandedTimeOnIce: String
 
     init(timeOnIce: String, assists: Int, goals: Int, shots: Int, hits: Int, powerPlayGoals: Int, powerPlayAssists: Int, penaltyMinutes: Int, faceOffPct: Double? = nil, faceOffWins: Int, faceoffTaken: Int, takeaways: Int, giveaways: Int, shortHandedGoals: Int, shortHandedAssists: Int, blocked: Int, plusMinus: Int, evenTimeOnIce: String, powerPlayTimeOnIce: String, shortHandedTimeOnIce: String) {
         self.timeOnIce = timeOnIce
@@ -350,7 +350,7 @@ class BDMLiveGameBoxScorePlayerSkaterStats: NSObject, Codable, NSSecureCoding {
         self.shortHandedTimeOnIce = shortHandedTimeOnIce
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let assists = coder.decodeInteger(forKey: "assists")
         let goals = coder.decodeInteger(forKey: "goals")
         let shots = coder.decodeInteger(forKey: "shots")
@@ -396,7 +396,7 @@ class BDMLiveGameBoxScorePlayerSkaterStats: NSObject, Codable, NSSecureCoding {
                   shortHandedTimeOnIce: shortHandedTimeOnIce as String)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.timeOnIce, forKey: "timeOnIce")
         coder.encode(self.assists, forKey: "assists")
         coder.encode(self.goals, forKey: "goals")
@@ -419,14 +419,14 @@ class BDMLiveGameBoxScorePlayerSkaterStats: NSObject, Codable, NSSecureCoding {
     }
 }
 
-class BDMLiveGameBoxScorePlayerGoalieStats: NSObject, Codable, NSSecureCoding {
-    static var supportsSecureCoding: Bool { return true }
-    let timeOnIce: String
-    let assists, goals, pim, shots: Int
-    let saves, powerPlaySaves, shortHandedSaves, evenSaves: Int
-    let shortHandedShotsAgainst, evenShotsAgainst, powerPlayShotsAgainst: Int
-    let decision: String
-    let savePercentage, powerPlaySavePercentage, shortHandedSavePercentage, evenStrengthSavePercentage: Double
+public class BDMLiveGameBoxScorePlayerGoalieStats: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let timeOnIce: String
+    public let assists, goals, pim, shots: Int
+    public let saves, powerPlaySaves, shortHandedSaves, evenSaves: Int
+    public let shortHandedShotsAgainst, evenShotsAgainst, powerPlayShotsAgainst: Int
+    public let decision: String
+    public let savePercentage, powerPlaySavePercentage, shortHandedSavePercentage, evenStrengthSavePercentage: Double
 
     init(timeOnIce: String, assists: Int, goals: Int, pim: Int, shots: Int, saves: Int, powerPlaySaves: Int, shortHandedSaves: Int, evenSaves: Int, shortHandedShotsAgainst: Int, evenShotsAgainst: Int, powerPlayShotsAgainst: Int, decision: String, savePercentage: Double, powerPlaySavePercentage: Double, shortHandedSavePercentage: Double, evenStrengthSavePercentage: Double) {
         self.timeOnIce = timeOnIce
@@ -448,7 +448,7 @@ class BDMLiveGameBoxScorePlayerGoalieStats: NSObject, Codable, NSSecureCoding {
         self.evenStrengthSavePercentage = evenStrengthSavePercentage
     }
 
-    required convenience init?(coder: NSCoder) {
+    public required convenience init?(coder: NSCoder) {
         let assists = coder.decodeInteger(forKey: "assists")
         let goals = coder.decodeInteger(forKey: "goals")
         let shots = coder.decodeInteger(forKey: "shots")
@@ -488,7 +488,7 @@ class BDMLiveGameBoxScorePlayerGoalieStats: NSObject, Codable, NSSecureCoding {
                   evenStrengthSavePercentage: evenStrengthSavePercentage)
     }
 
-    func encode(with coder: NSCoder) {
+    public func encode(with coder: NSCoder) {
         coder.encode(self.timeOnIce, forKey: "timeOnIce")
         coder.encode(self.assists, forKey: "assists")
         coder.encode(self.goals, forKey: "goals")

@@ -10,17 +10,17 @@ import Foundation
 
 public class BDMLiteObject: NSObject, Codable, NSSecureCoding {
     public static var supportsSecureCoding: Bool { return true }
-    public let id: Int
+    public let id: Int?
     public let name, link: String
 
-    init(id: Int, name: String, link: String) {
+    init(id: Int? = nil, name: String, link: String) {
         self.id = id
         self.name = name
         self.link = link
     }
 
     public required convenience init?(coder: NSCoder) {
-        let id = coder.decodeInteger(forKey: "id")
+        let id = coder.containsValue(forKey: "id") ? coder.decodeInteger(forKey: "id") : nil
         guard let name = coder.decodeObject(of: NSString.self, forKey: "name"),
             let link = coder.decodeObject(of: NSString.self, forKey: "link") else { return nil }
 
