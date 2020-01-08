@@ -10,5 +10,7 @@ import Bar_Down_Model
 import Foundation
 
 @objc public protocol BDWarRoomProtocol {
-    func getTodaysSchedule(with reply: (BDMScheduledGames) -> Void)
+    func getSchedule(date: Date, with reply: (BDMScheduledGames) -> Void)
+    func subscribeToFeed(feedId: Int, with reply: (BDMLiveGame) -> Void)
+    func getAllTeams(with reply: ([BDMTeam]) -> Void)
 }

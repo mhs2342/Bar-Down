@@ -298,7 +298,7 @@ class Bar_Down_ModelTests: XCTestCase {
     func testLiveGameGameDataDecoderFromJSON() {
         do {
             let data = try Bar_Down_ModelTests.loadJsonFromFile("LiveGameGameData")
-            let gameData = try decoder.decode(BDMLiveGameGameData.self, from: data)
+            let _ = try decoder.decode(BDMLiveGameGameData.self, from: data)
         } catch {
             XCTFail(error.localizedDescription)
             print(error)
@@ -320,7 +320,7 @@ class Bar_Down_ModelTests: XCTestCase {
     func testLiveFeedDecoderFromJSON() {
         do {
             let data = try Bar_Down_ModelTests.loadJsonFromFile("LiveFeed")
-            let liveGame = try decoder.decode(BDMLiveGame.self, from: data)
+            let _ = try decoder.decode(BDMLiveGame.self, from: data)
         } catch {
             XCTFail(error.localizedDescription)
             print(error)

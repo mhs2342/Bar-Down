@@ -16,10 +16,6 @@ class Bar_DownTests: XCTestCase {
         networkManager = BDWarRoomNetworkManager()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
     func testGenerateScheduleParams() {
         let components = DateComponents(year: 2020, month: 1, day: 1)
         guard let date = Calendar.current.date(from: components) else {
@@ -85,6 +81,22 @@ class Bar_DownTests: XCTestCase {
         wait(for: [expectation], timeout: 15)
     }
 
+    func testGetAllTeams() {
+        let expectation = XCTestExpectation(description: "com.sanch.bar-down-war-room.get-all-teams")
+        self.measure {
+            networkManager.getAllTeams { (result) in
+                switch result {
+                case .success(let obj):
+                    XCTAssertFalse(obj.teams.isEmpty)
+                case .failure(let error):
+                    print(error)
+                    XCTFail(error.localizedDescription)
+                }
+                expectation.fulfill()
+            }
+        }
+    }
+
     func testGetSchedule() {
         let components = DateComponents(year: 2020, month: 1, day: 8)
         guard let date = Calendar.current.date(from: components) else {
@@ -117,7 +129,7 @@ class Bar_DownTests: XCTestCase {
             let expectation = XCTestExpectation(description: "com.sanch.bar-down-war-room.get-schedule")
                 self.networkManager.getSchedule(date) { (result) in
                     switch result {
-                    case .success(let _):
+                    case .success:
                         print("success for \(date)")
                     case .failure(let error):
                         XCTFail(error.localizedDescription)

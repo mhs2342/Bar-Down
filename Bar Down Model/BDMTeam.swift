@@ -8,6 +8,26 @@
 
 import Foundation
 
+public class BDMTeams: NSObject, Codable, NSSecureCoding {
+    public static var supportsSecureCoding: Bool { return true }
+    public let teams: [BDMTeam]
+
+    internal init(teams: [BDMTeam]) {
+        self.teams = teams
+    }
+
+    public required convenience init?(coder: NSCoder) {
+        guard let teams = coder.decodeObject(of: [BDMTeam.self], forKey: "teams") as? [BDMTeam] else {
+            return nil
+        }
+        self.init(teams: teams)
+    }
+
+    public func encode(with coder: NSCoder) {
+        coder.encode(self.teams, forKey: "teams")
+    }
+}
+
 // MARK: - BDMTeam
 public class BDMTeam: NSObject, Codable, NSSecureCoding {
     public static var supportsSecureCoding: Bool { return true }

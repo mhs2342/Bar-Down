@@ -21,6 +21,13 @@ struct APIEndpoint: RawRepresentable {
     static let liveFeed: (Int) -> APIEndpoint = { id in
         return APIEndpoint(rawValue: "game/\(id)/feed/live")!
     }
+
+    static let teams: (Int?) -> APIEndpoint = { id in
+        if let id = id {
+            return APIEndpoint(rawValue: "teams/\(id)/")!
+        }
+        return APIEndpoint(rawValue: "teams/")!
+    }
 }
 
 public class BDWarRoomNetworkManager: NSObject {
@@ -31,6 +38,40 @@ public class BDWarRoomNetworkManager: NSObject {
         super.init()
         queue.maxConcurrentOperationCount = 10
     }
+
+    // MARK:- Public API
+
+    /// Get the games scheduled for a given date
+    /// - Parameters:
+    ///   - date: default date is Today
+    ///   - teamID: Filter by a team ID
+    ///   - completion: Completion handler using the result type for the scheduled games
+    public func getSchedule(_ date: Date = Date(), teamID: Int? = nil, completion: @escaping (Result<BDMScheduledGames, Error>) -> Void) {
+        let params = generateScheduleParams(date, teamID)
+        guard let request = generateRequest(endpoint: APIEndpoint.schedule, params: params) else { return }
+        queue.addOperation {
+            self.performRequest(request, completion: completion)
+        }
+    }
+
+    /// Subscribe to a games live feed
+    /// - Parameters:
+    ///   - gameID: id of game
+    ///   - completion: Completion handler that returns a result for a live game
+    public func getLiveFeed(_ gameID: Int, completion: @escaping (Result<BDMLiveGame, Error>) -> Void) {
+        guard let request = generateRequest(endpoint: APIEndpoint.liveFeed(gameID), params: nil) else { return }
+        queue.addOperation {
+            self.performRequest(request, completion: completion)
+        }
+    }
+
+    public func getAllTeams(completion: @escaping (Result<BDMTeams, Error>) -> Void) {
+        guard let request = generateRequest(endpoint: APIEndpoint.teams(nil), params: nil) else { return }
+        queue.addOperation {
+            self.performRequest(request, completion: completion)
+        }
+    }
+
 
     func generateRequest(endpoint: APIEndpoint, params: [String: String]?) -> URLRequest? {
         guard var url = URL(string: baseURL) else { return nil }
@@ -57,28 +98,6 @@ public class BDWarRoomNetworkManager: NSObject {
 
         return paramDictionary
     }
-
-    /// Get the games scheduled for a given date
-    /// - Parameters:
-    ///   - date: default date is Today
-    ///   - teamID: Filter by a team ID
-    ///   - completion: Completion handler using the result type for the scheduled games
-    public func getSchedule(_ date: Date = Date(), teamID: Int? = nil, completion: @escaping (Result<BDMScheduledGames, Error>) -> Void) {
-        let params = generateScheduleParams(date, teamID)
-        guard let request = generateRequest(endpoint: APIEndpoint.schedule, params: params) else { return }
-        queue.addOperation {
-            self.performRequest(request, completion: completion)
-        }
-    }
-
-    public func getLiveFeed(_ gameID: Int, completion: @escaping (Result<BDMLiveGame, Error>) -> Void) {
-        guard let request = generateRequest(endpoint: APIEndpoint.liveFeed(gameID), params: nil) else { return }
-        queue.addOperation {
-            self.performRequest(request, completion: completion)
-        }
-    }
-
-
 
     private func performRequest<T: Codable>(_ request: URLRequest,
                                 completion: @escaping (Result<T, Error>) -> Void) {
