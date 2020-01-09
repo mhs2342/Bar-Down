@@ -46,6 +46,8 @@
 		C9BA5AD923C64300008A39CB /* BDWarRoomErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */; };
 		C9BA5ADA23C64312008A39CB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938664023B676440071B1DD /* main.swift */; };
 		C9BA5ADB23C6433C008A39CB /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
+		C9BA5ADC23C6E1BC008A39CB /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
+		C9BA5ADD23C6E1BC008A39CB /* libBar Down Model.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C9F4686223B7C79500DA110F /* BDMLiveGameTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */; };
 		C9F4686523B7CB0E00DA110F /* LiveGameTeamBuffalo.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F4686423B7CB0E00DA110F /* LiveGameTeamBuffalo.json */; };
 		C9F4686723B7CD0E00DA110F /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
@@ -109,6 +111,13 @@
 			remoteGlobalIDString = C938664B23B6F2E70071B1DD;
 			remoteInfo = "Bar Down Model";
 		};
+		C9BA5ADE23C6E1BC008A39CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C93865F523B3C36C0071B1DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C938664B23B6F2E70071B1DD;
+			remoteInfo = "Bar Down Model";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -130,6 +139,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				C9BA5ACD23C43BBC008A39CB /* libBar Down Model.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9BA5AE023C6E1BC008A39CB /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9BA5ADD23C6E1BC008A39CB /* libBar Down Model.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BA5ADC23C6E1BC008A39CB /* libBar Down Model.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,11 +456,13 @@
 				C93865FA23B3C36C0071B1DD /* Frameworks */,
 				C93865FB23B3C36C0071B1DD /* Resources */,
 				C938663F23B6748D0071B1DD /* Embed XPC Services */,
+				C9BA5AE023C6E1BC008A39CB /* Embed Libraries */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C938663A23B6748D0071B1DD /* PBXTargetDependency */,
+				C9BA5ADF23C6E1BC008A39CB /* PBXTargetDependency */,
 			);
 			name = "Bar Down";
 			productName = "Bar Down";
@@ -743,6 +766,11 @@
 			isa = PBXTargetDependency;
 			target = C938664B23B6F2E70071B1DD /* Bar Down Model */;
 			targetProxy = C9BA5ACE23C43BBC008A39CB /* PBXContainerItemProxy */;
+		};
+		C9BA5ADF23C6E1BC008A39CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C938664B23B6F2E70071B1DD /* Bar Down Model */;
+			targetProxy = C9BA5ADE23C6E1BC008A39CB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

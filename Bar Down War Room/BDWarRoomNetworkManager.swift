@@ -37,6 +37,7 @@ public class BDWarRoomNetworkManager: NSObject {
     override init() {
         super.init()
         queue.maxConcurrentOperationCount = 10
+        queue.qualityOfService = .userInteractive
     }
 
     // MARK:- Public API
@@ -65,6 +66,8 @@ public class BDWarRoomNetworkManager: NSObject {
         }
     }
 
+    /// Get all teams in the league
+    /// - Parameter completion: completion that returns a result for teams
     public func getAllTeams(completion: @escaping (Result<BDMTeams, Error>) -> Void) {
         guard let request = generateRequest(endpoint: APIEndpoint.teams(nil), params: nil) else { return }
         queue.addOperation {
@@ -104,6 +107,7 @@ public class BDWarRoomNetworkManager: NSObject {
         let session = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
+                BDWarRoomErrorHandler.shared.log_network_error(error)
                 return
             }
             if let data = data {

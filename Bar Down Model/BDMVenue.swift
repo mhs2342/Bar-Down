@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: - Venue
 public class BDMVenue: BDMLiteObject {
+    override class public var supportsSecureCoding: Bool { return true }
     public let city: String?
     public let timeZone: BDMTimeZone?
 

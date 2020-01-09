@@ -9,7 +9,7 @@
 import Foundation
 
 public class BDMLiteObject: NSObject, Codable, NSSecureCoding {
-    public static var supportsSecureCoding: Bool { return true }
+    public class var supportsSecureCoding: Bool { return true }
     public let id: Int?
     public let name, link: String
 

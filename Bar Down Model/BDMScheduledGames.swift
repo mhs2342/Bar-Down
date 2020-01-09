@@ -32,7 +32,7 @@ public class BDMScheduledGames: NSObject, Codable, NSSecureCoding {
         let totalMatches = coder.decodeInteger(forKey: "totalMatches")
         let wait = coder.decodeInteger(forKey: "wait")
         guard let copyright = coder.decodeObject(of: NSString.self, forKey: "copyright"),
-            let dates = coder.decodeObject(of: [BDMScheduledGameDate.self], forKey: "dates") as? [BDMScheduledGameDate] else {
+            let dates = coder.decodeObject(of: [NSArray.self, BDMScheduledGameDate.self], forKey: "dates") as? [BDMScheduledGameDate] else {
                 return nil
         }
         self.init(copyright: copyright as String,
@@ -77,7 +77,7 @@ public class BDMScheduledGameDate: NSObject, Codable, NSSecureCoding {
         let totalGames = coder.decodeInteger(forKey: "totalGames")
         let totalMatches = coder.decodeInteger(forKey: "totalMatches")
         guard let date = coder.decodeObject(of: NSString.self, forKey: "date"),
-            let games = coder.decodeObject(of: [BDMScheduledGame.self], forKey: "games") as? [BDMScheduledGame] else {
+            let games = coder.decodeObject(of: [NSArray.self, BDMScheduledGame.self], forKey: "games") as? [BDMScheduledGame] else {
                 return nil
         }
         self.init(date: date as String,

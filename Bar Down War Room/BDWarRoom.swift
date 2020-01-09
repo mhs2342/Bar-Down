@@ -10,23 +10,45 @@ import Bar_Down_Model
 import Foundation
 
 class BDWarRoom: NSObject, BDWarRoomProtocol {
-    func getSchedule(date: Date, with reply: (BDMScheduledGames) -> Void) {
-
-    }
-
-    func subscribeToFeed(feedId: Int, with reply: (BDMLiveGame) -> Void) {
-
-    }
-
-    func getAllTeams(with reply: ([BDMTeam]) -> Void) {
-        
-    }
-
     var networkManager: BDWarRoomNetworkManager
 
     override init() {
         networkManager = BDWarRoomNetworkManager()
 
         super.init()
+
+    }
+
+    func getSchedule(date: Date = Date(), with reply: @escaping (BDMScheduledGames?, Error?) -> Void) {
+        networkManager.getSchedule { (result) in
+            switch result {
+            case .success(let games):
+                reply(games, nil)
+            case .failure(let error):
+                reply(nil, error)
+            }
+        }
+    }
+
+    func subscribeToFeed(feedId: Int, with reply: @escaping (BDMLiveGame?, Error?) -> Void) {
+        networkManager.getLiveFeed(feedId) { (result) in
+            switch result {
+            case .success(let game):
+                reply(game, nil)
+            case .failure(let error):
+                reply(nil, error)
+            }
+        }
+    }
+
+    func getAllTeams(with reply: @escaping ([BDMTeam]?, Error?) -> Void) {
+        networkManager.getAllTeams { (result) in
+            switch result {
+            case .success(let teams):
+                reply(teams.teams, nil)
+            case .failure(let error):
+                reply(nil, error)
+            }
+        }
     }
 }
