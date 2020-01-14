@@ -337,19 +337,7 @@ class Bar_Down_ModelTests: XCTestCase {
             print(error)
         }
     }
-
-    func testNestedDictionaryJSON() {
-        do {
-            let data = try Bar_Down_ModelTests.loadJsonFromFile("NestedDictionaries")
-            let dto = try decoder.decode(TestModel.self, from: data)
-            XCTAssertNotNil(dto)
-            XCTAssertEqual(dto.children["1"]?.bar, "bar1")
-            XCTAssertEqual(dto.children["2"]?.bar, "bar2")
-        } catch  {
-            XCTFail(error.localizedDescription)
-        }
-    }
-
+    
     func testPlayerDecoderFromJSON() {
         do {
             let data = try Bar_Down_ModelTests.loadJsonFromFile("BradMarchand")

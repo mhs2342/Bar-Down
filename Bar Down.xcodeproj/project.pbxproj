@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9051C9E23C9061B00A380FB /* TeamCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9051C9D23C9061B00A380FB /* TeamCellView.xib */; };
 		C919B83B23B705F300249A87 /* BostonBruins.json in Resources */ = {isa = PBXBuildFile; fileRef = C919B83A23B705F300249A87 /* BostonBruins.json */; };
 		C938660123B3C36C0071B1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938660023B3C36C0071B1DD /* AppDelegate.swift */; };
 		C938660323B3C36C0071B1DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938660223B3C36C0071B1DD /* ViewController.swift */; };
@@ -26,6 +27,9 @@
 		C938665E23B6F4210071B1DD /* BDMVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938665D23B6F4210071B1DD /* BDMVenue.swift */; };
 		C938666023B6F48F0071B1DD /* BDMTimeZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938665F23B6F48F0071B1DD /* BDMTimeZone.swift */; };
 		C938666223B6F4D20071B1DD /* BDMTeamDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C938666123B6F4D20071B1DD /* BDMTeamDTO.swift */; };
+		C986F22623C7B8C9002035EC /* BDMRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F22523C7B8C9002035EC /* BDMRecord.swift */; };
+		C98B747A23CE57F7009B3623 /* TeamCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B747923CE57F7009B3623 /* TeamCellView.swift */; };
+		C98B747C23CE8588009B3623 /* BostonBruins.json in Resources */ = {isa = PBXBuildFile; fileRef = C919B83A23B705F300249A87 /* BostonBruins.json */; };
 		C9AE339A23C2868300F7CBC3 /* LiveGameGameData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9AE339923C2868300F7CBC3 /* LiveGameGameData.json */; };
 		C9AE339C23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE339B23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift */; };
 		C9AE339E23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE339D23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift */; };
@@ -51,7 +55,6 @@
 		C9F4686223B7C79500DA110F /* BDMLiveGameTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */; };
 		C9F4686523B7CB0E00DA110F /* LiveGameTeamBuffalo.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F4686423B7CB0E00DA110F /* LiveGameTeamBuffalo.json */; };
 		C9F4686723B7CD0E00DA110F /* libBar Down Model.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C938664C23B6F2E70071B1DD /* libBar Down Model.dylib */; };
-		C9F4687123B7CF8D00DA110F /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4687023B7CF8D00DA110F /* TestModel.swift */; };
 		C9F4687423B7D16700DA110F /* NestedDictionaries.json in Resources */ = {isa = PBXBuildFile; fileRef = C9F4687323B7D16700DA110F /* NestedDictionaries.json */; };
 		C9F4687523B7D20200DA110F /* Bar_Down_ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C919B83223B705AD00249A87 /* Bar_Down_ModelTests.swift */; };
 		C9F4687723B7D2A100DA110F /* BDMLiveGamePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F4687623B7D2A100DA110F /* BDMLiveGamePlayer.swift */; };
@@ -157,6 +160,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C9051C9D23C9061B00A380FB /* TeamCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCellView.xib; sourceTree = "<group>"; };
 		C919B83023B705AD00249A87 /* Bar Down ModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bar Down ModelTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C919B83223B705AD00249A87 /* Bar_Down_ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar_Down_ModelTests.swift; sourceTree = "<group>"; };
 		C919B83423B705AD00249A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 		C938665D23B6F4210071B1DD /* BDMVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMVenue.swift; sourceTree = "<group>"; };
 		C938665F23B6F48F0071B1DD /* BDMTimeZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMTimeZone.swift; sourceTree = "<group>"; };
 		C938666123B6F4D20071B1DD /* BDMTeamDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMTeamDTO.swift; sourceTree = "<group>"; };
+		C986F22523C7B8C9002035EC /* BDMRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMRecord.swift; sourceTree = "<group>"; };
+		C98B747923CE57F7009B3623 /* TeamCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellView.swift; sourceTree = "<group>"; };
 		C9AE339923C2868300F7CBC3 /* LiveGameGameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LiveGameGameData.json; sourceTree = "<group>"; };
 		C9AE339B23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameBoxScoreOrganization.swift; sourceTree = "<group>"; };
 		C9AE339D23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameBoxScore.swift; sourceTree = "<group>"; };
@@ -201,7 +207,6 @@
 		C9BA5AD323C54A40008A39CB /* BDWarRoomErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDWarRoomErrorHandler.swift; sourceTree = "<group>"; };
 		C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameTeam.swift; sourceTree = "<group>"; };
 		C9F4686423B7CB0E00DA110F /* LiveGameTeamBuffalo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LiveGameTeamBuffalo.json; sourceTree = "<group>"; };
-		C9F4687023B7CF8D00DA110F /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		C9F4687323B7D16700DA110F /* NestedDictionaries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = NestedDictionaries.json; sourceTree = "<group>"; };
 		C9F4687623B7D2A100DA110F /* BDMLiveGamePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGamePlayer.swift; sourceTree = "<group>"; };
 		C9F4687823B7D9EE00DA110F /* BradMarchand.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BradMarchand.json; sourceTree = "<group>"; };
@@ -320,6 +325,8 @@
 				C938660623B3C3710071B1DD /* Main.storyboard */,
 				C938660923B3C3710071B1DD /* Info.plist */,
 				C938660A23B3C3710071B1DD /* Bar_Down.entitlements */,
+				C9051C9D23C9061B00A380FB /* TeamCellView.xib */,
+				C98B747923CE57F7009B3623 /* TeamCellView.swift */,
 			);
 			path = "Bar Down";
 			sourceTree = "<group>";
@@ -367,7 +374,6 @@
 				C938665F23B6F48F0071B1DD /* BDMTimeZone.swift */,
 				C938666123B6F4D20071B1DD /* BDMTeamDTO.swift */,
 				C9F4686123B7C79500DA110F /* BDMLiveGameTeam.swift */,
-				C9F4687023B7CF8D00DA110F /* TestModel.swift */,
 				C9F4687623B7D2A100DA110F /* BDMLiveGamePlayer.swift */,
 				C9F4687A23B99E9B00DA110F /* BDMLiveGameEvent.swift */,
 				C9F4689223BC1A6300DA110F /* BDMLiveGamePlays.swift */,
@@ -378,6 +384,7 @@
 				C9AE33A223C39FAF00F7CBC3 /* BDMLiveGame.swift */,
 				C9BA5AC523C42AA6008A39CB /* BDMScheduledGames.swift */,
 				C9BA5AC723C42D69008A39CB /* BDMLiteObject.swift */,
+				C986F22523C7B8C9002035EC /* BDMRecord.swift */,
 			);
 			path = "Bar Down Model";
 			sourceTree = "<group>";
@@ -633,6 +640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C938660523B3C3710071B1DD /* Assets.xcassets in Resources */,
+				C9051C9E23C9061B00A380FB /* TeamCellView.xib in Resources */,
 				C938660823B3C3710071B1DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +663,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98B747C23CE8588009B3623 /* BostonBruins.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C938660323B3C36C0071B1DD /* ViewController.swift in Sources */,
+				C98B747A23CE57F7009B3623 /* TeamCellView.swift in Sources */,
 				C938660123B3C36C0071B1DD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,13 +730,13 @@
 				C938666223B6F4D20071B1DD /* BDMTeamDTO.swift in Sources */,
 				C938666023B6F48F0071B1DD /* BDMTimeZone.swift in Sources */,
 				C9F4687723B7D2A100DA110F /* BDMLiveGamePlayer.swift in Sources */,
+				C986F22623C7B8C9002035EC /* BDMRecord.swift in Sources */,
 				C9F4689B23BE96EE00DA110F /* BDMLiveGameGameData.swift in Sources */,
 				C9AE33A323C39FAF00F7CBC3 /* BDMLiveGame.swift in Sources */,
 				C9BA5AC623C42AA6008A39CB /* BDMScheduledGames.swift in Sources */,
 				C9F4689323BC1A6300DA110F /* BDMLiveGamePlays.swift in Sources */,
 				C938665A23B6F3CC0071B1DD /* BDMDivision.swift in Sources */,
 				C9AE339E23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift in Sources */,
-				C9F4687123B7CF8D00DA110F /* TestModel.swift in Sources */,
 				C9AE339C23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift in Sources */,
 				C9BA5AC823C42D69008A39CB /* BDMLiteObject.swift in Sources */,
 				C938665623B6F32B0071B1DD /* BDMTeam.swift in Sources */,

@@ -10,7 +10,7 @@ import Bar_Down_Model
 import Foundation
 
 @objc public protocol BDWarRoomProtocol {
-    func getSchedule(date: Date, with reply: @escaping (BDMScheduledGames?, Error?) -> Void)
+    func getSchedule(date: Date, offlineMode: Bool, with reply: @escaping (BDMScheduledGames?, Error?) -> Void)
     func subscribeToFeed(feedId: Int, with reply: @escaping  (BDMLiveGame?, Error?) -> Void)
-    func getAllTeams(with reply: @escaping ([BDMTeam]?, Error?) -> Void)
+    func getAllTeams(offlineMode: Bool, with reply: @escaping (BDMTeams?, Error?) -> Void)
 }

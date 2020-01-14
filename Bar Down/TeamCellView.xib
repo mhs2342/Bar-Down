@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="TeamCellID" id="aLI-BQ-nH1" customClass="TeamCellView" customModule="Bar_Down" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="521" height="129"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <box boxType="custom" cornerRadius="4" title="Box" translatesAutoresizingMaskIntoConstraints="NO" id="QnQ-PG-Uk7">
+                    <rect key="frame" x="0.0" y="0.0" width="521" height="129"/>
+                    <view key="contentView" id="VQb-01-ugI">
+                        <rect key="frame" x="1" y="1" width="519" height="127"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Exg-la-20k">
+                                <rect key="frame" x="16" y="16" width="95" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="1Ag-pf-bod"/>
+                                    <constraint firstAttribute="width" constant="95" id="aHJ-YW-aBb"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="team-15" id="aWE-bU-Iab"/>
+                            </imageView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tLs-8E-dsf">
+                                <rect key="frame" x="469" y="51" width="34" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="bcj-wt-NTe"/>
+                                    <constraint firstAttribute="width" constant="34" id="rNI-Me-0nb"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="Favorite" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3e2-Pt-A8L">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="favoriteToggled:" target="aLI-BQ-nH1" id="0IA-Ik-R9p"/>
+                                </connections>
+                            </button>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="3" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-jj-gCr">
+                                <rect key="frame" x="130" y="65" width="108" height="42"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPF-V2-Q4h">
+                                        <rect key="frame" x="-2" y="19" width="112" height="23"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Team Name" id="Nem-fK-5N6">
+                                            <font key="font" metaFont="systemSemibold" size="20"/>
+                                            <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZDs-tS-xGz">
+                                        <rect key="frame" x="-2" y="0.0" width="47" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Record" id="B08-To-t4E">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="1uA-jj-gCr" firstAttribute="top" secondItem="VQb-01-ugI" secondAttribute="top" constant="20" id="2G9-61-lOW"/>
+                            <constraint firstItem="tLs-8E-dsf" firstAttribute="centerY" secondItem="VQb-01-ugI" secondAttribute="centerY" id="RLe-uN-diL"/>
+                            <constraint firstAttribute="trailing" secondItem="tLs-8E-dsf" secondAttribute="trailing" constant="16" id="YCj-4j-l5O"/>
+                            <constraint firstItem="1uA-jj-gCr" firstAttribute="leading" secondItem="Exg-la-20k" secondAttribute="trailing" constant="19" id="YwV-Tt-dKy"/>
+                            <constraint firstItem="Exg-la-20k" firstAttribute="leading" secondItem="VQb-01-ugI" secondAttribute="leading" constant="16" id="kSD-kk-78x"/>
+                            <constraint firstItem="Exg-la-20k" firstAttribute="centerY" secondItem="VQb-01-ugI" secondAttribute="centerY" id="oS1-th-n48"/>
+                        </constraints>
+                    </view>
+                    <color key="fillColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QnQ-PG-Uk7" firstAttribute="leading" secondItem="aLI-BQ-nH1" secondAttribute="leading" id="Wfr-tD-qiK"/>
+                <constraint firstItem="QnQ-PG-Uk7" firstAttribute="top" secondItem="aLI-BQ-nH1" secondAttribute="top" id="jLp-ER-Qbt"/>
+                <constraint firstAttribute="bottom" secondItem="QnQ-PG-Uk7" secondAttribute="bottom" id="lBr-dU-V4d"/>
+                <constraint firstAttribute="trailing" secondItem="QnQ-PG-Uk7" secondAttribute="trailing" id="six-dO-wrj"/>
+            </constraints>
+            <connections>
+                <outlet property="favoriteButton" destination="tLs-8E-dsf" id="pms-cL-wtN"/>
+                <outlet property="imageView" destination="Exg-la-20k" id="lVC-O2-TBT"/>
+                <outlet property="teamLogoView" destination="Exg-la-20k" id="cn0-VJ-myK"/>
+                <outlet property="teamNameField" destination="XPF-V2-Q4h" id="Q1W-Q4-srU"/>
+                <outlet property="teamRecordLabel" destination="ZDs-tS-xGz" id="sgU-cP-CnB"/>
+                <outlet property="textField" destination="XPF-V2-Q4h" id="uWe-R6-bqi"/>
+            </connections>
+            <point key="canvasLocation" x="256.5" y="25.5"/>
+        </tableCellView>
+    </objects>
+    <resources>
+        <image name="Favorite" width="16" height="16"/>
+        <image name="team-15" width="1166" height="734"/>
+    </resources>
+</document>

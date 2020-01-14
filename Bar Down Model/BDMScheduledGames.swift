@@ -240,6 +240,8 @@ public class BDMLeagueRecord: NSObject, Codable, NSSecureCoding {
     public static var supportsSecureCoding: Bool { return true }
     public let wins, losses, ot: Int
     public let type: String
+    
+    public var overall: String { "\(wins)-\(losses)-\(ot)" }
 
     init(wins: Int, losses: Int, ot: Int, type: String) {
         self.wins = wins

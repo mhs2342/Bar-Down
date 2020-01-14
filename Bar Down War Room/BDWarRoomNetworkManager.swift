@@ -69,10 +69,15 @@ public class BDWarRoomNetworkManager: NSObject {
     /// Get all teams in the league
     /// - Parameter completion: completion that returns a result for teams
     public func getAllTeams(completion: @escaping (Result<BDMTeams, Error>) -> Void) {
-        guard let request = generateRequest(endpoint: APIEndpoint.teams(nil), params: nil) else { return }
+        let params = generateAllTeamsParams()
+        guard let request = generateRequest(endpoint: APIEndpoint.teams(nil), params: params) else { return }
         queue.addOperation {
             self.performRequest(request, completion: completion)
         }
+    }
+
+    func generateAllTeamsParams() -> [String: String] {
+        return ["expand": "team.record"]
     }
 
 

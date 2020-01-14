@@ -12,12 +12,13 @@ public class BDMTeams: NSObject, Codable, NSSecureCoding {
     public static var supportsSecureCoding: Bool { return true }
     public let teams: [BDMTeam]
 
-    internal init(teams: [BDMTeam]) {
+    public init(teams: [BDMTeam]) {
         self.teams = teams
     }
 
     public required convenience init?(coder: NSCoder) {
-        guard let teams = coder.decodeObject(of: [BDMTeam.self], forKey: "teams") as? [BDMTeam] else {
+        
+        guard let teams = coder.decodeObject(of: [NSArray.self, BDMTeam.self], forKey: "teams") as? [BDMTeam] else {
             return nil
         }
         self.init(teams: teams)
@@ -42,12 +43,13 @@ public class BDMTeam: NSObject, Codable, NSSecureCoding {
     public let officialSiteURL: String
     public let franchiseID: Int
     public let active: Bool
-
+    public let record: BDMRecord?
     enum CodingKeys: String, CodingKey {
         case id, name, link, venue, abbreviation, teamName, locationName, firstYearOfPlay, division, conference, franchise, shortName
         case officialSiteURL = "officialSiteUrl"
         case franchiseID = "franchiseId"
         case active
+        case record
     }
 
     public func encode(with coder: NSCoder) {
@@ -66,9 +68,10 @@ public class BDMTeam: NSObject, Codable, NSSecureCoding {
         coder.encode(self.officialSiteURL, forKey: "officialSiteURL")
         coder.encodeCInt(Int32(self.franchiseID), forKey: "franchiseID")
         coder.encode(self.active, forKey: "active")
+        coder.encode(self.record, forKey: "record")
     }
 
-    init(id: Int, name: String, link: String, venue: BDMVenue, abbreviation: String, teamName: String, locationName: String, firstYearOfPlay: String, division: BDMDivision, conference: BDMConference, franchise: BDMFranchise, shortName: String, officialSiteURL: String, franchiseID: Int, active: Bool) {
+    init(id: Int, name: String, link: String, venue: BDMVenue, abbreviation: String, teamName: String, locationName: String, firstYearOfPlay: String, division: BDMDivision, conference: BDMConference, franchise: BDMFranchise, shortName: String, officialSiteURL: String, franchiseID: Int, active: Bool, record: BDMRecord? = nil) {
         self.id = id
         self.name = name
         self.link = link
@@ -84,6 +87,7 @@ public class BDMTeam: NSObject, Codable, NSSecureCoding {
         self.officialSiteURL = officialSiteURL
         self.franchiseID = franchiseID
         self.active = active
+        self.record = record
     }
 
     public required convenience init?(coder: NSCoder) {
@@ -104,6 +108,7 @@ public class BDMTeam: NSObject, Codable, NSSecureCoding {
             let officialSiteURL = coder.decodeObject(of: NSString.self, forKey: "officialSiteURL") else {
                 return nil
         }
+        let record = coder.decodeObject(of: BDMRecord.self, forKey: "record")
 
         self.init(id: id,
                   name: name as String,
@@ -119,6 +124,7 @@ public class BDMTeam: NSObject, Codable, NSSecureCoding {
                   shortName: shortName as String,
                   officialSiteURL: officialSiteURL as String,
                   franchiseID: franchiseID,
-                  active: active)
+                  active: active,
+                  record: record)
     }
 }

@@ -19,15 +19,20 @@ class BDWarRoom: NSObject, BDWarRoomProtocol {
 
     }
 
-    func getSchedule(date: Date = Date(), with reply: @escaping (BDMScheduledGames?, Error?) -> Void) {
-        networkManager.getSchedule { (result) in
-            switch result {
-            case .success(let games):
-                reply(games, nil)
-            case .failure(let error):
-                reply(nil, error)
+    func getSchedule(date: Date = Date(), offlineMode: Bool, with reply: @escaping (BDMScheduledGames?, Error?) -> Void) {
+        if offlineMode {
+            
+        } else {
+            networkManager.getSchedule { (result) in
+                switch result {
+                case .success(let games):
+                    reply(games, nil)
+                case .failure(let error):
+                    reply(nil, error)
+                }
             }
         }
+
     }
 
     func subscribeToFeed(feedId: Int, with reply: @escaping (BDMLiveGame?, Error?) -> Void) {
@@ -41,14 +46,35 @@ class BDWarRoom: NSObject, BDWarRoomProtocol {
         }
     }
 
-    func getAllTeams(with reply: @escaping ([BDMTeam]?, Error?) -> Void) {
-        networkManager.getAllTeams { (result) in
-            switch result {
-            case .success(let teams):
-                reply(teams.teams, nil)
-            case .failure(let error):
+    func getAllTeams(offlineMode: Bool, with reply: @escaping (BDMTeams?, Error?) -> Void) {
+        if offlineMode {
+            do {
+                let data = loadJsonFromFile("BostonBruins")
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let teams = try decoder.decode(BDMTeams.self, from: data)
+                reply(teams, nil)
+            } catch {
+
                 reply(nil, error)
             }
+        } else {
+            networkManager.getAllTeams { (result) in
+                switch result {
+                case .success(let teams):
+                    reply(teams, nil)
+                case .failure(let error):
+                    reply(nil, error)
+                }
+            }
         }
+
+    }
+
+    private func loadJsonFromFile(_ name: String) -> Data {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: name, ofType: "json")
+        let url = URL(fileURLWithPath: path!)
+        return try! Data(contentsOf: url)
     }
 }
