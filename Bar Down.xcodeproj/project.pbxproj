@@ -30,6 +30,10 @@
 		C986F22623C7B8C9002035EC /* BDMRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C986F22523C7B8C9002035EC /* BDMRecord.swift */; };
 		C98B747A23CE57F7009B3623 /* TeamCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B747923CE57F7009B3623 /* TeamCellView.swift */; };
 		C98B747C23CE8588009B3623 /* BostonBruins.json in Resources */ = {isa = PBXBuildFile; fileRef = C919B83A23B705F300249A87 /* BostonBruins.json */; };
+		C99EA09B23D61CAA009B7E7F /* Loadableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA09A23D61CAA009B7E7F /* Loadableview.swift */; };
+		C99EA09D23D61DDE009B7E7F /* LeagueTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99EA09C23D61DDE009B7E7F /* LeagueTableView.xib */; };
+		C99EA09F23D61EE8009B7E7F /* LeagueTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA09E23D61EE8009B7E7F /* LeagueTableView.swift */; };
+		C99EA0A123D620AF009B7E7F /* LeagueTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99EA0A023D620AF009B7E7F /* LeagueTableViewManager.swift */; };
 		C9AE339A23C2868300F7CBC3 /* LiveGameGameData.json in Resources */ = {isa = PBXBuildFile; fileRef = C9AE339923C2868300F7CBC3 /* LiveGameGameData.json */; };
 		C9AE339C23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE339B23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift */; };
 		C9AE339E23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE339D23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift */; };
@@ -194,6 +198,10 @@
 		C938666123B6F4D20071B1DD /* BDMTeamDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMTeamDTO.swift; sourceTree = "<group>"; };
 		C986F22523C7B8C9002035EC /* BDMRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMRecord.swift; sourceTree = "<group>"; };
 		C98B747923CE57F7009B3623 /* TeamCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCellView.swift; sourceTree = "<group>"; };
+		C99EA09A23D61CAA009B7E7F /* Loadableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadableview.swift; sourceTree = "<group>"; };
+		C99EA09C23D61DDE009B7E7F /* LeagueTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeagueTableView.xib; sourceTree = "<group>"; };
+		C99EA09E23D61EE8009B7E7F /* LeagueTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableView.swift; sourceTree = "<group>"; };
+		C99EA0A023D620AF009B7E7F /* LeagueTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueTableViewManager.swift; sourceTree = "<group>"; };
 		C9AE339923C2868300F7CBC3 /* LiveGameGameData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LiveGameGameData.json; sourceTree = "<group>"; };
 		C9AE339B23C2897F00F7CBC3 /* BDMLiveGameBoxScoreOrganization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameBoxScoreOrganization.swift; sourceTree = "<group>"; };
 		C9AE339D23C2F0F900F7CBC3 /* BDMLiveGameBoxScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDMLiveGameBoxScore.swift; sourceTree = "<group>"; };
@@ -327,6 +335,10 @@
 				C938660A23B3C3710071B1DD /* Bar_Down.entitlements */,
 				C9051C9D23C9061B00A380FB /* TeamCellView.xib */,
 				C98B747923CE57F7009B3623 /* TeamCellView.swift */,
+				C99EA09A23D61CAA009B7E7F /* Loadableview.swift */,
+				C99EA09C23D61DDE009B7E7F /* LeagueTableView.xib */,
+				C99EA09E23D61EE8009B7E7F /* LeagueTableView.swift */,
+				C99EA0A023D620AF009B7E7F /* LeagueTableViewManager.swift */,
 			);
 			path = "Bar Down";
 			sourceTree = "<group>";
@@ -641,6 +653,7 @@
 			files = (
 				C938660523B3C3710071B1DD /* Assets.xcassets in Resources */,
 				C9051C9E23C9061B00A380FB /* TeamCellView.xib in Resources */,
+				C99EA09D23D61DDE009B7E7F /* LeagueTableView.xib in Resources */,
 				C938660823B3C3710071B1DD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -682,6 +695,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99EA09F23D61EE8009B7E7F /* LeagueTableView.swift in Sources */,
+				C99EA0A123D620AF009B7E7F /* LeagueTableViewManager.swift in Sources */,
+				C99EA09B23D61CAA009B7E7F /* Loadableview.swift in Sources */,
 				C938660323B3C36C0071B1DD /* ViewController.swift in Sources */,
 				C98B747A23CE57F7009B3623 /* TeamCellView.swift in Sources */,
 				C938660123B3C36C0071B1DD /* AppDelegate.swift in Sources */,
